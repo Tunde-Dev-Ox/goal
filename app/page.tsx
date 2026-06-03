@@ -1,65 +1,336 @@
-import Image from "next/image";
+function formatDate(dateString: string) {
+  const date = new Date(dateString + "T00:00:00");
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+  }).format(date);
+}
+
+const sections = [
+  {
+    id: "goals",
+    title: "Goals",
+    subtitle: "Concrete milestones I'm working toward",
+    items: [
+      {
+        title: "Complete my React course on Udemy",
+        description:
+          "Finish the course I am taking on Udemy and be well grounded in building applications with React and Next.js",
+        is_complete: false,
+        targetDate: "2026-06-01",
+      },
+      {
+        title: "Go for a three days prayer retreat",
+        description:
+          "Take off from work to focus on spiritual growth and reconnect with God.",
+        is_complete: false,
+        targetDate: "2026-08-01",
+      },
+      {
+        title: "Build five real React projects",
+        description:
+          "Build five real-world projects using React and Next.js to solidify my understanding of the framework and build a portfolio to showcase my skills \uD83D\uDCA0A vacation rental app \uD83D\uDCA0 A mini music streaming app \uD83D\uDCA0 A full blown e-commerce store \uD83D\uDCA0 AI-powered Google docs \uD83D\uDCA0 A full blown HR management system",
+        is_complete: false,
+        targetDate: "2026-12-01",
+      },
+      {
+        title: "Get a new product management role as a product manager",
+        description:
+          "Secure a new role as a product manager in a tech company outside Nigeria paying a minimum of $2000 monthly. The role will x10 my career, financial life, and give me the opportunity to work on far more exciting and impactful products. The role will also afford me the opportunity to work with a diverse set of people and learn from them.",
+        is_complete: false,
+        targetDate: "2026-10-01",
+      },
+      {
+        title: "Fix a solar system in my brother's house",
+        description:
+          "Get a 5kva solar system for my brother's house and fix it. This will make me work uninterruptedly for a long period of time without the hindrance of public power supply. This will enable me complete my projects and make progress in my career and personal life.",
+        is_complete: true,
+        targetDate: "2026-05-01",
+      },
+      {
+        title: "Get my international passport \u2014 \u20A6170,000",
+        description:
+          "Get a new passport for personal use. This will make my migration dream a reality and also enable me travel to other countries for work or vacation.",
+        is_complete: false,
+        targetDate: "2026-09-01",
+      },
+      {
+        title: "Apply and ace the PMP certification exam \u2014 $575",
+        description: "Apply for the PMP certification exam and ace it.",
+        is_complete: false,
+        targetDate: "2026-10-01",
+      },
+      {
+        title: "Become a better product manager",
+        description:
+          "Become a better product manager by reading more books on product management, taking courses, building and working on real-world products, attending webinars, and also  attending events to network with other product managers. \uD83D\uDCA0Read five product books \uD83D\uDCA0Solve 10 product case studies \uD83D\uDCA0Build and launch at least three products",
+        is_complete: false,
+        targetDate: "2026-12-01",
+      },
+      {
+        title: "Learn Javascript to an advanced level",
+        description:
+          "Master javascript to an advanced level, I am talking about ES6 and above, async/await, promises, closures, scope, prototypal inheritance, etc. Also learn software engineering principles and its patterns. This is a long term goal that needs to be worked on consistently.",
+        is_complete: false,
+        targetDate: "2026-12-28",
+      },
+      {
+        title: "Become a millionaire",
+        description:
+          "Become a millionaire by December 2026 by saving and investing wisely. I should have at least a million naira across my investment portfolio, no matter how small the investment could be.",
+        is_complete: false,
+        targetDate: "2026-12-31",
+      },
+    ],
+  },
+  {
+    id: "ambitions",
+    title: "Ambitions",
+    subtitle: "The big bets I'm willing to take",
+    items: [
+      {
+        title: "Become a principal product manager at Uber or its equivalent",
+        description:
+          "Work at the very top level of product management at a company like Uber or its equivalent. This means working on products that will impact millions of users and also working with a team of world-class engineers, designers, and product managers. It also means being able to make decisions that will impact the company and its users. This is a big bet but it is a bet that I am willing to take.",
+        targetDate: "2030-12-01",
+        is_complete: false,
+      },
+      {
+        title: "Speak at a major tech conference in Europe or America",
+        description:
+          "Speak at a major tech conference in Europe or America about a topic I am passionate about. It could be about product management, software engineering, or anything that I am knowledgeable about.",
+        targetDate: "2028-10-01",
+        is_complete: false,
+      },
+      {
+        title: "Get a Masters Degree at Cambridge University",
+        description:
+          "Get a Masters Degree at Cambridge University either in Management Science or an area related to Product Management. This is a big bet but it is a bet that I am willing to take.",
+        targetDate: "2027-10-01",
+        is_complete: false,
+      },
+      {
+        title: "Become a successful investor and venture capitalist",
+        description:
+          "Become a successful investor and venture capitalist by investing in startups, stocks, real estate, and other assets that I believe in and have done my due diligence on.",
+        targetDate: "2031-12-01",
+        is_complete: false,
+      },
+      {
+        title: "Become a multi-millionaire in USD",
+        description:
+          "Become a millionaire in USD by the year 2031. This means having a net worth of at least $1,000,000. This will be made possible through my investments, my career, and my various businesses.",
+        targetDate: "2032-12-01",
+        is_complete: false,
+      },
+      {
+        title: "Become a family man with a wife and kid",
+        description:
+          "Get married to a woman I love and raise kids with her.",
+        targetDate: "2028-10-01",
+        is_complete: false,
+      },
+      {
+        title: "Become a major financial sponsor of the church",
+        description:
+          "Be a major financial sponsor of the church through regular giving and support to the mission works.",
+        targetDate: "2030-12-01",
+        is_complete: false,
+      },
+    ],
+  },
+  {
+    id: "vision",
+    title: "Vision",
+    subtitle: "The future I'm trying to create",
+    items: [
+      {
+        title: "A life of purpose",
+        description:
+          "To live a life of purpose, where every day is driven by intention and not by habit. A life where I am able to make a meaningful impact in the world and leave a legacy that will outlast me.",
+      },
+      {
+        title: "Builder of quality products",
+        description:
+          "To build quality products that will make a meaningful impact in the world and also make me wealthy.",
+      },
+    ],
+  },
+  {
+    id: "aspirations",
+    title: "Aspirations",
+    subtitle: "The person I'm becoming",
+    items: [
+      {
+        title: "Become a product mentor",
+        description:
+          "To guide and mentor other aspiring product managers and help them achieve their goals.",
+      },
+      {
+        title: "Become a thought leader",
+        description:
+          "To be recognized as a thought leader in the product management community and also be a voice that inspires and motivates others.",
+      },
+      {
+        title: "Live in a clean, stable, and productive environment",
+        description:
+          "To live in a clean, stable, and productive environment where I can focus on my goals and aspirations. This means living in a place with good infrastructure, access to resources, and a supportive community.",
+      },
+      {
+        title: "Become financially self-sufficient",
+        description:
+          "To become financially self-sufficient and independent, not relying on anyone for my financial needs. This means having a net worth of at least $1,000,000 by the year 2031.",
+      },
+    ],
+  },
+];
+
+const numeral = ["01", "02", "03", "04"];
+
+function Section({
+  id,
+  title,
+  subtitle,
+  items,
+  index,
+}: {
+  id: string;
+  title: string;
+  subtitle: string;
+  items: { title: string; description: string; targetDate?: string; is_complete?: boolean }[];
+  index: number;
+}) {
+  return (
+    <section id={id} className="relative py-20 first:pt-0">
+      <span className="absolute -left-4 top-0 text-[10rem] font-bold leading-none text-border/60 select-none sm:-left-8 sm:text-[14rem]">
+        {numeral[index]}
+      </span>
+      <div className="relative mb-10">
+        <h2 className="relative inline-block text-3xl font-semibold tracking-tight sm:text-4xl">
+          {title}
+          <span className="absolute -bottom-2 left-0 h-[2px] w-8 bg-accent rounded-full" />
+        </h2>
+        <p className="mt-4 text-muted max-w-md">{subtitle}</p>
+      </div>
+      <div className="relative flex flex-col items-start justify-start w-full">
+        {items.map((item) => {
+          const complete = item.is_complete;
+          return (
+            <div
+              key={item.title}
+              className="relative w-full pl-6 pb-10 last:pb-0 group"
+            >
+              <div
+                className={`absolute left-0 top-0 bottom-0 w-px transition-colors duration-300 ${
+                  complete ? "bg-complete/40" : "bg-border group-hover:bg-border"
+                }`}
+              />
+              <span
+                className={`absolute left-0 top-1 -translate-x-1/2 w-2 h-2 rounded-full border-[1.5px] transition-all duration-300 ${
+                  complete
+                    ? "bg-complete border-complete shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
+                    : "bg-background border-border group-hover:border-accent group-hover:scale-125"
+                }`}
+              />
+              <div className="rounded-lg -mx-2 px-2 py-2 transition-colors duration-200 group-hover:bg-card-hover">
+                <h3 className={`font-medium tracking-tight ${complete ? "line-through decoration-muted/50" : ""}`}>{item.title}</h3>
+                <p className={`mt-1.5 text-sm leading-relaxed ${complete ? "line-through text-muted/50" : "text-muted"}`}>
+                  {item.description}
+                </p>
+                {item.targetDate && (
+                  <p className="mt-2.5">
+                    <span className="inline-block px-2 py-0.5 text-xs rounded-full bg-accent-subtle text-accent font-medium">
+                      {formatDate(item.targetDate)}
+                    </span>
+                  </p>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="mx-auto max-w-3xl px-6 pt-16 pb-8 sm:px-8 sm:pt-36 sm:pb-32">
+      <header className="mb-22">
+        <div className="flex items-center gap-2 text-sm tracking-tight">
+          <span className="text-foreground font-medium">Joseph Olatunde</span>
+          <span className="text-muted">&mdash;</span>
+          <span className="text-muted">my future</span>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+        <h1 className="mt-10 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+          <span className="bg-linear-to-r from-foreground via-foreground to-accent bg-clip-text text-transparent">
+            A living document
+            <br />
+            of what&rsquo;s ahead.
+          </span>
+        </h1>
+        <div className="mt-6 h-px w-12 bg-accent/60 rounded-full" />
+        <p className="mt-6 max-w-lg text-base leading-relaxed text-muted">
+          Goals I&rsquo;m chasing, ambitions I&rsquo;m pursuing, the vision
+          I&rsquo;m building toward, and the person I aspire to become.
+        </p>
+      </header>
+
+      <section className="relative py-24">
+        <span className="absolute -left-4 top-0 text-[10rem] font-bold leading-none text-border/60 select-none sm:-left-8 sm:text-[14rem]">
+          Pray
+        </span>
+        <div className="relative max-w-2xl mx-auto">
+          <div className="relative border border-border rounded-2xl bg-card/60 backdrop-blur-sm px-8 py-12 sm:px-12 sm:py-14">
+            <span className="absolute -top-3 left-8 text-6xl leading-none text-accent/20 select-none">
+              &ldquo;
+            </span>
+            <span className="absolute -bottom-6 right-8 text-6xl leading-none text-accent/20 select-none">
+              &rdquo;
+            </span>
+            <div className="relative space-y-5 text-base leading-[1.8] text-foreground/85">
+              <p>
+                I live a joyful and fulfilled life. Everything that I do and
+                everywhere I go brings me joy and fulfillment. Every decision
+                that I make moves me closer to my goals and aspirations. I am
+                blessed by God and my life is a testament to His goodness. I am a
+                work in progress and I am constantly learning and growing. I am
+                grateful for the journey ahead and the person I am becoming. I am
+                favored by God and loved by men. I carry God&rsquo;s presence.
+              </p>
+              <p>
+                I live in a great financial abunadance. I am free of bad debts and financial stress. My income streams are many and they flow in effortlessly. I use my wealth to serve God and humanity. I am a good steward of God&rsquo;s resources. I lack nothing good for God has blessed me richly. I prosper in all I do. I attract opportunities and men of influence. My hands are never idle and empty. I receive daily increase in knowledge, wealth, relationships, wisdom, and understanding. I have a retentive memory and I learn fast. I am smart and highly intelligent.
+              </p>
+              <p>
+                I have all it takes to be great in life. I am a man that is
+                helped by God. I receive constant help from God and men. I
+                receive grace to be a great husband, father, provider, and
+                leader. I receive grace to be a man that honors God with his
+                life, finances, and relationships. I am healthy, wealthy, and
+                wise.
+              </p>
+            </div>
+            <div className="mt-8 pt-6 border-t border-border flex items-center gap-3">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              <span className="text-xs text-muted tracking-wider uppercase">
+                My daily affirmation
+              </span>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {sections.map((section, i) => (
+        <Section key={section.id} {...section} index={i} />
+      ))}
+
+      <footer className="border-t border-border pt-8 mt-28">
+        <div className="flex items-center gap-3 text-sm text-muted">
+          <span>&copy; {new Date().getFullYear()} Joseph Olatunde</span>
+          <span className="w-1 h-1 rounded-full bg-border" />
+          <span>subject to change, always growing</span>
+        </div>
+      </footer>
     </div>
   );
 }
