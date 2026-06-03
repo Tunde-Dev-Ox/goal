@@ -68,6 +68,13 @@ const sections = [
         targetDate: "2026-12-01",
       },
       {
+        title: "Get a fully-funded Masters Degree scholarship in UK or Europe",
+        description:
+          "Get a fully-funded Masters Degree in UK or Europe. This will afford me the opportunity to work in Europe after my studies and have a first hand experience of the European working environment. This is a big bet but it is a bet that I am willing to take. I will focus on getting a masters in either Management Science or an area related to product management.",
+        is_complete: false,
+        targetDate: "2026-12-01",
+      },
+      {
         title: "Learn Javascript to an advanced level",
         description:
           "Master javascript to an advanced level, I am talking about ES6 and above, async/await, promises, closures, scope, prototypal inheritance, etc. Also learn software engineering principles and its patterns. This is a long term goal that needs to be worked on consistently.",
