@@ -190,9 +190,69 @@ const sections = [
       },
     ],
   },
+  {
+    id: "ventures",
+    title: "Ventures",
+    subtitle: "Businesses I will build and invest in after I have built capacity",
+    items: [
+      {
+        title: "An ecommerce store that sells quality sports product",
+        description:
+          "I will build an ecommerce company that sells sport items (jerseys, shoes, accessories, etc). This business has been on my mind for a long time. I will launch it and build it successfully.",
+        targetDate: "2029-12-01",
+        is_complete: false,
+      },
+      {
+        title: "A software company that solves major problems",
+        description:
+          "A software company that solves major problems for businesses, individuals, and institutions. We will build software that will make their lives easier and also make them wealthy.",
+        targetDate: "2029-12-01",
+        is_complete: false,
+      },
+      {
+        title: "A commercial music studio",
+        description:
+          "A commercial music studio in Lagos that provides recording, mixing, mastering, and production services to musicians and artists.",
+        targetDate: "2030-12-01",
+        is_complete: false,
+      },
+      {
+        title: "A VC fund that invests in tech startups",
+        description:
+          "A venture capital fund that invests in tech startups. I will use my experience and knowledge to identify and support promising startups that have the potential to make a meaningful impact in the world.",
+        targetDate: "2031-12-01",
+        is_complete: false,
+      },
+      {
+        title: "A record label that funds music talents",
+        description:
+          "I will build a highly specialized record label that funds music artists across Africa and other parts of the world.",
+        targetDate: "2032-12-01",
+        is_complete: false,
+      },
+      {
+        title: "Investment in bonds, stocks, and other commodities worth over $1m",
+        description: "I will invest in bonds, stocks, and other commodities to diversify my portfolio and generate passive income. These are other areas of investment I will be exploring starting from now.",
+        targetDate: "2031-12-01",
+        is_complete: false,
+      },
+      {
+        title: "Real Estate investment worth over $10m",
+        description: "I will invest in real estate to generate passive income and also build wealth. Real estate is a great asset that can appreciate over time and also generate rental income.",
+        targetDate: "2035-12-01",
+        is_complete: false,
+      },
+      {
+        title: "Investment in Gold and Silver worth over $1m",
+        description: "I will invest in Gold and Silver to hedge against inflation and also preserve my wealth. These are tangible assets that can hold their value over time.",
+        targetDate: "2033-12-01",
+        is_complete: false,
+      },
+    ]
+  }
 ];
 
-const numeral = ["01", "02", "03", "04"];
+const numeral = ["01", "02", "03", "04", "05"];
 
 function Section({
   id,
@@ -228,16 +288,14 @@ function Section({
               className="relative w-full pl-6 pb-10 last:pb-0 group"
             >
               <div
-                className={`absolute left-0 top-0 bottom-0 w-px transition-colors duration-300 ${
-                  complete ? "bg-complete/40" : "bg-border group-hover:bg-border"
-                }`}
+                className={`absolute left-0 top-0 bottom-0 w-px transition-colors duration-300 ${complete ? "bg-complete/40" : "bg-border group-hover:bg-border"
+                  }`}
               />
               <span
-                className={`absolute left-0 top-1 -translate-x-1/2 w-2 h-2 rounded-full border-[1.5px] transition-all duration-300 ${
-                  complete
+                className={`absolute left-0 top-1 -translate-x-1/2 w-2 h-2 rounded-full border-[1.5px] transition-all duration-300 ${complete
                     ? "bg-complete border-complete shadow-[0_0_0_4px_rgba(16,185,129,0.15)]"
                     : "bg-background border-border group-hover:border-accent group-hover:scale-125"
-                }`}
+                  }`}
               />
               <div className="rounded-lg -mx-2 px-2 py-2 transition-colors duration-200 group-hover:bg-card-hover">
                 <h3 className={`font-medium tracking-tight ${complete ? "line-through decoration-muted/50" : ""}`}>{item.title}</h3>
