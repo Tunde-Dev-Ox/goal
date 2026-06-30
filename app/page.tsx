@@ -9,7 +9,7 @@ function formatDate(dateString: string) {
 const sections = [
   {
     id: "goals",
-    title: "Goals",
+    title: "Goals (2026)",
     subtitle: "Concrete milestones I'm working toward",
     items: [
       {
@@ -17,26 +17,26 @@ const sections = [
         description:
           "Finish the course I am taking on Udemy and be well grounded in building applications with React and Next.js",
         is_complete: false,
-        targetDate: "2026-06-01",
+        targetDate: "2026-07-01",
       },
       {
         title: "Go for a three days prayer retreat",
         description:
-          "Take off from work to focus on spiritual growth and reconnect with God.",
+          "Take one week leave from work to focus on spiritual growth, deep fellowship, and reconnection with God. The goal is to discipline myself to seek God's help and receive his divine mercy while I wait in prayer, fasting, and His Word.",
         is_complete: false,
         targetDate: "2026-08-01",
       },
       {
         title: "Build five real React projects",
         description:
-          "Build five real-world projects using React and Next.js to solidify my understanding of the framework and build a portfolio to showcase my skills \uD83D\uDCA0A vacation rental app \uD83D\uDCA0 A mini music streaming app \uD83D\uDCA0 A full blown e-commerce store \uD83D\uDCA0 AI-powered Google docs \uD83D\uDCA0 A full blown HR management system",
+          "Build five real-world projects using React, Next.js, Typescript, and Tanstack to solidify my understanding of frontend engineering and build a portfolio to showcase my skills \uD83D\uDCA0A vacation rental app \uD83D\uDCA0 A mini music streaming app \uD83D\uDCA0 A full blown e-commerce store \uD83D\uDCA0 AI-powered Google docs \uD83D\uDCA0 A full blown HR management system",
         is_complete: false,
         targetDate: "2026-12-01",
       },
       {
-        title: "Get a new product management role as a product manager",
+        title: "Get a new and better job",
         description:
-          "Secure a new role as a product manager in a tech company outside Nigeria paying a minimum of $2000 monthly. The role will x10 my career, financial life, and give me the opportunity to work on far more exciting and impactful products. The role will also afford me the opportunity to work with a diverse set of people and learn from them.",
+          "Secure a new role as a product manager in a company outside Nigeria paying a minimum of $2000 monthly. The role will x10 my career, financial life, and give me the opportunity to work on far more exciting and impactful products. The role will also afford me the opportunity to work with a diverse set of people and learn from them, and to save for my future ventures.",
         is_complete: false,
         targetDate: "2026-10-01",
       },
@@ -55,12 +55,6 @@ const sections = [
         targetDate: "2026-09-01",
       },
       {
-        title: "Apply and ace the PMP certification exam \u2014 $575",
-        description: "Apply for the PMP certification exam and ace it.",
-        is_complete: false,
-        targetDate: "2026-10-01",
-      },
-      {
         title: "Become a better product manager",
         description:
           "Become a better product manager by reading more books on product management, taking courses, building and working on real-world products, attending webinars, and also  attending events to network with other product managers. \uD83D\uDCA0Read five product books \uD83D\uDCA0Solve 10 product case studies \uD83D\uDCA0Build and launch at least three products",
@@ -68,31 +62,17 @@ const sections = [
         targetDate: "2026-12-01",
       },
       {
-        title: "Get a fully-funded Masters Degree scholarship in UK or Europe",
-        description:
-          "Get a fully-funded Masters Degree in UK or Europe. This will afford me the opportunity to work in Europe after my studies and have a first hand experience of the European working environment. This is a big bet but it is a bet that I am willing to take. I will focus on getting a masters in either Management Science or an area related to product management.",
-        is_complete: false,
-        targetDate: "2026-12-01",
-      },
-      {
         title: "Learn Javascript to an advanced level",
         description:
-          "Master javascript to an advanced level, I am talking about ES6 and above, async/await, promises, closures, scope, prototypal inheritance, etc. Also learn software engineering principles and its patterns. This is a long term goal that needs to be worked on consistently.",
+          "Subscribe for Frontend Masters for six months to master javascript to an advanced level, I am talking about ES6 and above, async/await, promises, closures, scope, prototypal inheritance, etc. Also learn software engineering principles and its patterns.",
         is_complete: false,
         targetDate: "2026-12-28",
-      },
-      {
-        title: "Become a millionaire",
-        description:
-          "Become a millionaire by December 2026 by saving and investing wisely. I should have at least a million naira across my investment portfolio, no matter how small the investment could be.",
-        is_complete: false,
-        targetDate: "2026-12-31",
       },
     ],
   },
   {
     id: "ambitions",
-    title: "Ambitions",
+    title: "Ambitions (5 years from 2026)",
     subtitle: "The big bets I'm willing to take",
     items: [
       {
@@ -320,7 +300,7 @@ function Section({
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-3xl px-6 pt-16 pb-8 sm:px-8 sm:pt-36 sm:pb-32">
+    <div className="mx-auto max-w-3xl px-6 pt-16 sm:px-8 sm:pt-36 pb-6">
       <header className="mb-22">
         <div className="flex items-center gap-2 text-sm tracking-tight">
           <span className="text-foreground font-medium">Joseph Olatunde</span>
