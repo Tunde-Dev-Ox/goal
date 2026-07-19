@@ -48,14 +48,14 @@ const sections = [
         targetDate: "2026-05-01",
       },
       {
-        title: "Get my international passport \u2014 \u20A6170,000",
+        title: "Get my international passport \u2014 \u20A6140,000",
         description:
           "Get a new passport for personal use. This will make my migration dream a reality and also enable me travel to other countries for work or vacation.",
         is_complete: false,
         targetDate: "2026-09-01",
       },
       {
-        title: "Become a better product manager",
+        title: "Become a better product manager & Learn and pivot to fintech PM",
         description:
           "Become a better product manager by reading more books on product management, taking courses, building and working on real-world products, attending webinars, and also  attending events to network with other product managers. \uD83D\uDCA0Read five product books \uD83D\uDCA0Solve 10 product case studies \uD83D\uDCA0Build and launch at least three products",
         is_complete: false,
@@ -76,7 +76,7 @@ const sections = [
     subtitle: "The big bets I'm willing to take",
     items: [
       {
-        title: "Become a principal product manager at Uber or its equivalent",
+        title: "Become a principal product manager at Stripe or its equivalent",
         description:
           "Work at the very top level of product management at a company like Uber or its equivalent. This means working on products that will impact millions of users and also working with a team of world-class engineers, designers, and product managers. It also means being able to make decisions that will impact the company and its users. This is a big bet but it is a bet that I am willing to take.",
         targetDate: "2030-12-01",
@@ -90,10 +90,24 @@ const sections = [
         is_complete: false,
       },
       {
+        title: "Migrate to Europe or America and live a far better life",
+        description:
+          "Migrate to Europe or America and live a far better life than I am currently living in Nigeria. This means having access to better healthcare, education, infrastructure, and opportunities. It also means being able to travel freely and explore the world.",
+        targetDate: "2028-10-01",
+        is_complete: false,
+      },
+      {
         title: "Get a Masters Degree at Cambridge University",
         description:
           "Get a Masters Degree at Cambridge University either in Management Science or an area related to Product Management. This is a big bet but it is a bet that I am willing to take.",
         targetDate: "2027-10-01",
+        is_complete: false,
+      },
+      {
+        title: "Become a successful founder and entrepreneur",
+        description:
+          "Become a successful founder and entrepreneur by building and scaling businesses that solve real problems for people. This means having the ability to identify opportunities, build products, and lead teams to success.",
+        targetDate: "2031-12-01",
         is_complete: false,
       },
       {
